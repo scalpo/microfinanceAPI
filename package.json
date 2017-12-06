@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/scalpo/microfinanceAPI/issues"
   },
-  "homepage": "https://github.com/scalpo/microfinanceAPI#readme"
+  "homepage": "https://github.com/scalpo/microfinanceAPI#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }
