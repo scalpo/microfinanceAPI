@@ -1,0 +1,141 @@
+{
+	"info": {
+		"name": "microifinanceAPI",
+		"_postman_id": "9952b323-9f66-f51d-0fba-2f183593b265",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "API",
+			"description": "",
+			"item": [
+				{
+					"name": "API",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"//var jsonData = JSON.parse(responseBody);",
+									"",
+									"tests['expected 200'] = responseCode.code === 200;",
+									"//tests['response is **SUCCESS**'] = jsonData.result === 'success';",
+									"//tests['received expected payload'] = jsonData.list.length > 0;"
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": ""
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "localhost:3000/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								""
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Lender",
+			"description": "",
+			"item": [
+				{
+					"name": "Lender by LenderID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests['expected 200'] = responseCode.code === 200;",
+									"tests['good response'] = responseBody === '/lenders/:lender_ids';",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": ""
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "localhost:3000/lenders/123",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"lenders",
+								"123"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Loan by LenderID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									"tests['expected 200'] = responseCode.code === 200;",
+									"tests['good response'] = responseBody === '/lenders/:lender_id/loans';",
+									""
+								]
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": ""
+							}
+						],
+						"body": {},
+						"url": {
+							"raw": "localhost:3000/lenders/123/loans",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"lenders",
+								"123",
+								"loans"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
