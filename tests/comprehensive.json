@@ -103,7 +103,7 @@
 							"script": {
 								"type": "text/javascript",
 								"exec": [
-									"tests['expected 200'] = responseCode.code !== 200;",
+									"tests['expected 200'] = responseCode.code === 200;",
 									"tests['good response'] = responseBody === '/lenders/:lender_id/loans';",
 									""
 								]
