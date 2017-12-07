@@ -4,7 +4,7 @@
 
 stuff...
 
-1) copy pwd cat /var/jenkins_home/secrets/initialAdminPassword (eg. 8b9b527632a94644a622eb4be09efb58)
+1) copy pwd -> $ cat /var/jenkins_home/secrets/initialAdminPassword (eg. 8b9b527632a94644a622eb4be09efb58)
 2) install suggested plugins (WjgAB1j1Y!1Tpl*V6GRs)
 3) configure SMTP (172.26.0.1, from address, etc)
 4) ssh & docker exec into jenkins container
@@ -14,6 +14,7 @@ stuff...
 8) npm i -g n newman
 9) n latest
 
+~~~~
 node {
     stage('Testing...') {
         git 'https://github.com/scalpo/microfinanceAPI.git'
@@ -31,3 +32,4 @@ node {
         junit 'testResults.xml'
     }
 }
+~~~~
