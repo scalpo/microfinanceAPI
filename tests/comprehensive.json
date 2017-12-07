@@ -18,23 +18,15 @@
 							"script": {
 								"type": "text/javascript",
 								"exec": [
-									"//var jsonData = JSON.parse(responseBody);",
-									"",
 									"tests['expected 200'] = responseCode.code === 200;",
-									"//tests['response is **SUCCESS**'] = jsonData.result === 'success';",
-									"//tests['received expected payload'] = jsonData.list.length > 0;"
+									"tests['response time under 1 second'] = responseTime < 1000;"
 								]
 							}
 						}
 					],
 					"request": {
 						"method": "GET",
-						"header": [
-							{
-								"key": "",
-								"value": ""
-							}
-						],
+						"header": [],
 						"body": {},
 						"url": {
 							"raw": "localhost:3000/",
@@ -66,19 +58,14 @@
 								"exec": [
 									"tests['expected 200'] = responseCode.code === 200;",
 									"tests['good response'] = responseBody === '/lenders/:lender_ids';",
-									""
+									"tests['response time under 1 second'] = responseTime < 1000;"
 								]
 							}
 						}
 					],
 					"request": {
 						"method": "GET",
-						"header": [
-							{
-								"key": "",
-								"value": ""
-							}
-						],
+						"header": [],
 						"body": {},
 						"url": {
 							"raw": "localhost:3000/lenders/123",
@@ -105,7 +92,7 @@
 								"exec": [
 									"tests['expected 200'] = responseCode.code === 200;",
 									"tests['good response'] = responseBody === '/lenders/:lender_id/loans';",
-									""
+									"tests['response time under 5 ms'] = responseTime < 5;"
 								]
 							}
 						}
