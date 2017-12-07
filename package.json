@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test-api-OLD": "newman run tests/comprehensive.json",
-    "test-api": "newman run tests/comprehensive.json --reporters junit --reporter-junit-export testResults.xml"
+    "test-api": "newman run tests/comprehensive.json --reporters cli,junit --reporter-junit-export testResults.xml"
   },
   "repository": {
     "type": "git",
