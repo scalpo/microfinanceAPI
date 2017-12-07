@@ -56,7 +56,7 @@
 							"script": {
 								"type": "text/javascript",
 								"exec": [
-									"tests['expected 200'] = responseCode.code !== 200;",
+									"tests['expected 200'] = responseCode.code === 200;",
 									"tests['good response'] = responseBody === '/lenders/:lender_ids';",
 									"tests['response time under 1 second'] = responseTime < 1000;"
 								]
