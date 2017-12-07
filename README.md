@@ -4,32 +4,30 @@
 
 stuff...
 
-s 69RI!8e4vbKixQl!lh0z
-
-1) install suggested plugins
-2) configure SMTP (172.26.0.1)
-3) install nodejs plugin
-
-ssh
-apt-get update
-apt-get install nodejs
-apt-get install npm
-
-
-ss 0960c22822bd43f1a5ae0788e5ab0c18
+1) copy pwd cat /var/jenkins_home/secrets/initialAdminPassword (eg. 8b9b527632a94644a622eb4be09efb58)
+2) install suggested plugins (WjgAB1j1Y!1Tpl*V6GRs)
+3) configure SMTP (172.26.0.1, from address, etc)
+4) ssh & docker exec into jenkins container
+5) apt-get update
+6) apt-get install -y nodejs
+7) apt-get install -y npm
+8) npm i -g n newman
+9) n latest
 
 node {
-    git 'https://github.com/scalpo/microfinanceAPI.git'
+    stage('Testing...') {
+        git 'https://github.com/scalpo/microfinanceAPI.git'
+
+        sh 'npm install'
+        sh 'node server.js &'
     
-    sh 'npm install'
-    sh 'node server.js &'
+        try {
+            sh 'npm run test-api'
+            currentBuild.result = 'SUCCESS'
+        } catch (Exception ex) {
+            currentBuild.result = 'FAILURE'
+        }
     
-    try {
-        sh 'npm run test-api'
-        currentBuild.result = 'SUCCESS'
-    } catch (Exception ex) {
-        currentBuild.result = 'FAILURE'
+        junit 'testResults.xml'
     }
-    
-    junit 'results.xml'
 }
