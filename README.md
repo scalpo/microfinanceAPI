@@ -13,6 +13,8 @@ stuff...
 7) apt-get install -y npm
 8) npm i -g n newman
 9) n latest
+10) setup trigger (scheduled, webhook from git, etc)
+11) add following pipeline script
 
 ~~~~
 node {
