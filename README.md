@@ -13,7 +13,7 @@ stuff...
 7) apt-get install -y npm
 8) npm i -g n newman
 9) n latest
-10) setup trigger (build periodically H/15 * * * *, webhook from git, etc)
+10) setup trigger (build periodically eg. H/15 * * * *, webhook from git, etc)
 11) add following pipeline script
 
 ~~~~
