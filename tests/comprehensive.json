@@ -92,7 +92,7 @@
 								"exec": [
 									"tests['expected 200'] = responseCode.code === 200;",
 									"tests['good response'] = responseBody === '/lenders/:lender_id/loans';",
-									"tests['response time under 4 ms'] = responseTime < 4;"
+									"tests['response time under 3 ms'] = responseTime < 3;"
 								]
 							}
 						}
